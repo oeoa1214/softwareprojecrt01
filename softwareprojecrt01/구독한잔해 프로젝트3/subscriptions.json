@@ -1,0 +1,29 @@
+{
+    "넷 플 릭 스": {
+        "cost": 3.0,
+        "cycle": "4주",
+        "next_payment": "1111-11-11",
+        "category": "OTT",
+        "last_used": "1111-11-11",
+        "trial_end": null,
+        "shared_count": 1
+    },
+    "넷플릭스": {
+        "cost": 1.0,
+        "cycle": "4주",
+        "next_payment": "1111-11-11",
+        "category": "OTT",
+        "last_used": "1111-11-11",
+        "trial_end": null,
+        "shared_count": 1
+    },
+    "게임패스": {
+        "cost": 10000.0,
+        "cycle": "4주",
+        "next_payment": "2026-09-01",
+        "category": "게임",
+        "last_used": "2025-03-2",
+        "trial_end": null,
+        "shared_count": 1
+    }
+}
