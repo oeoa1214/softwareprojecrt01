@@ -2,6 +2,7 @@ subscriptions = {}
 import json
 import os
 from datetime import datetime
+import winsound
 #OS os는 파일이나 폴더 위치를 다룰 때 쓰는 Python 기본 기능
 #JSON 파일의 정확한 위치를 만들어 둠
 #__file__은 현재 실행 중인 subscriptions.py 파일 위치
@@ -14,7 +15,10 @@ def register_subscription():
     # 서비스명 중복 예외
     while True:
         service_name = input("서비스명을 입력해주세요: ")
-
+        if service_name.strip() == "":
+            print("서비스명을 입력해주세요.")
+            continue
+  
         if service_name in subscriptions:
             print("이미 등록된 서비스입니다. 다른 서비스명을 입력해주세요.")
         else:
@@ -148,6 +152,11 @@ def delete_subscription():
 def save_subscriptions():
     with open(DATA_FILE, "w", encoding="utf-8") as file:
         json.dump(subscriptions, file, ensure_ascii=False, indent=4)
+       # 저장 완료 효과음 - 빠밤카팜 느낌
+    winsound.Beep(800, 70)
+    winsound.Beep(1050, 90)
+    winsound.Beep(1350, 70)
+    winsound.Beep(1750, 180)
 
     print("구독 정보를 JSON 파일에 저장했습니다.")
     print("이용해주셔서 감사합니다~")
