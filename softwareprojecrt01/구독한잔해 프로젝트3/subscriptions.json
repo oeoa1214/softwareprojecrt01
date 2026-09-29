@@ -1,29 +1,56 @@
 {
-    "넷 플 릭 스": {
-        "cost": 3.0,
-        "cycle": "4주",
-        "next_payment": "1111-11-11",
-        "category": "OTT",
-        "last_used": "1111-11-11",
-        "trial_end": null,
-        "shared_count": 1
-    },
     "넷플릭스": {
-        "cost": 1.0,
-        "cycle": "4주",
-        "next_payment": "1111-11-11",
+        "cost": 17000.0,
+        "cycle": "월간",
+        "next_payment": "2026-09-15",
         "category": "OTT",
-        "last_used": "1111-11-11",
+        "last_used": "2026-08-20",
+        "trial_end": null,
+        "shared_count": 2
+    },
+    "유튜브 프리미엄": {
+        "cost": 14900.0,
+        "cycle": "월간",
+        "next_payment": "2026-09-20",
+        "category": "영상",
+        "last_used": "2026-09-01",
         "trial_end": null,
         "shared_count": 1
     },
-    "게임패스": {
-        "cost": 10000.0,
-        "cycle": "4주",
-        "next_payment": "2026-09-01",
-        "category": "게임",
-        "last_used": "2025-03-2",
+    "Microsoft 365": {
+        "cost": 119000.0,
+        "cycle": "연간",
+        "next_payment": "2027-03-01",
+        "category": "생산성",
+        "last_used": "2026-08-10",
         "trial_end": null,
+        "shared_count": 1
+    },
+    "멜론": {
+        "cost": 10900.0,
+        "cycle": "월간",
+        "next_payment": "2026-09-18",
+        "category": "음악",
+        "last_used": "2026-07-25",
+        "trial_end": null,
+        "shared_count": 1
+    },
+    "테스트 4주 구독": {
+        "cost": 12000.0,
+        "cycle": "4주",
+        "next_payment": "2026-09-25",
+        "category": "기타",
+        "last_used": "2026-09-05",
+        "trial_end": null,
+        "shared_count": 1
+    },
+    "테스트 OTT 구독": {
+        "cost": 10000.0,
+        "cycle": "월간",
+        "next_payment": "2026-09-22",
+        "category": "OTT",
+        "last_used": "2026-08-01",
+        "trial_end": "2026-09-20",
         "shared_count": 1
     }
 }
