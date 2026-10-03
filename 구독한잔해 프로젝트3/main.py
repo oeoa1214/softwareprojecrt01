@@ -5,7 +5,11 @@ from spending_report import spending_report
 from shared_cost_calculator import caculator
 import os
 import time
+<<<<<<< HEAD
+
+=======
 load_subscriptions()
+>>>>>>> 1867a2070455a59e0f6f5bad33d9b151ae850d82
 
 while True:
     print()

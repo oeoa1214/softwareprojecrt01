@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+import duckdb
+from pathlib import Path
+
+DB_PATH = Path(__file__).resolve().parent / "subscriptions.duckdb"
+
+conn = duckdb.connect(str(DB_PATH))
+conn.execute("CALL start_ui();")
+
+input("DuckDB 웹페이지 확인 중 - 끝내려면 Enter")
+conn.execute("""
+CREATE TABLE IF NOT EXISTS subscriptions (
+    service_name VARCHAR PRIMARY KEY,
+    cost DOUBLE,
+    cycle VARCHAR,
+    next_payment VARCHAR,
+    category VARCHAR,
+    last_used VARCHAR,
+    trial_end VARCHAR,
+    shared_count INTEGER
+)
+""")
+print(conn.execute("SHOW TABLES").fetchall())
+print("DB 연결 완료:", DB_PATH)
+=======
+>>>>>>> 1867a2070455a59e0f6f5bad33d9b151ae850d82
 subscriptions = {}
 import json
 import os
@@ -100,6 +126,23 @@ def register_subscription():
 
         break
 
+<<<<<<< HEAD
+    conn.execute("""
+    INSERT INTO subscriptions
+    (service_name, cost, cycle, next_payment,
+     category, last_used, trial_end, shared_count)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+""", [
+    service_name,
+    float(cost),
+    cycle,
+    next_payment,
+    category,
+    last_used,
+    trial_end,
+    int(shared_count)
+])
+=======
     subscriptions[service_name] = {
         "cost": cost,
         "cycle": cycle,
@@ -109,6 +152,7 @@ def register_subscription():
         "trial_end": trial_end,
         "shared_count": shared_count
     }
+>>>>>>> 1867a2070455a59e0f6f5bad33d9b151ae850d82
     winsound.Beep(784, 100)
     winsound.Beep(1047, 250)
 
@@ -117,22 +161,32 @@ def register_subscription():
 
 #구독 조회
 def view_subscriptions():
-    if not subscriptions:
+    rows = conn.execute("""
+        SELECT * FROM subscriptions
+    """).fetchall()
+
+    if not rows:
         print("등록된 구독이 없습니다.")
         return
 
     print("===== 구독 조회 =====")
 
+<<<<<<< HEAD
+    for row in rows:
+        print("서비스명:", row[0])
+        print("요금:", row[1], "원")
+        print("결제 주기:", row[2])
+        print("다음 결제 예정일:", row[3])
+        print("카테고리:", row[4])
+=======
     for key, value in subscriptions.items():
         print("서비스명:", key)
         print(f"요금: {float(value['cost']):,.2f}원")
         print(f"결제 주기: {value['cycle']}")
         print(f"다음 결제 예정일: {value['next_payment']}")
         print(f"카테고리: {value['category']}")
+>>>>>>> 1867a2070455a59e0f6f5bad33d9b151ae850d82
         print("--------------------")
-
-    detect_cancellation_candidates()
-
 
 #구독 삭제
 #만약 구독이 존재하지 않으면 "해당 서비스가 존재하지 않습니다." 출력
